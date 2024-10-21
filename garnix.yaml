@@ -1,0 +1,5 @@
+servers:
+  - configuration: factorio-server
+    deployment:
+      type: on-branch
+      branch: main

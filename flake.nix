@@ -14,6 +14,7 @@
         system = "x86_64-linux"; # Specify your system architecture
         modules = [
           ./factorio.nix
+          ./config.nix
         ];
       };
     };
