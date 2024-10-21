@@ -9,7 +9,7 @@
   outputs = {
     self,
     nixpkgs,
-    garnix-lib.
+    garnix-lib,
     ...
   } @ inputs  :{
     nixosConfigurations = {
