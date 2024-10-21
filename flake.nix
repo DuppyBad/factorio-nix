@@ -6,7 +6,12 @@
     garnix-lib.url = "github:garnix-io/garnix-lib";
   };
 
-  outputs = inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    garnix-lib.
+    ...
+  } @ inputs  :{
     nixosConfigurations = {
       factorio-server = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux"; # Specify your system architecture
