@@ -11,7 +11,7 @@
     nixpkgs,
     garnix-lib,
     ...
-  } @ inputs  :{
+  } @ inputs: {
     nixosConfigurations = {
       factorio-server = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux"; # Specify your system architecture
