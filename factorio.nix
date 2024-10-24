@@ -51,5 +51,6 @@ in {
     htop
     bottom
   ];
-  networking.firewall.allowedUDPPorts = [34197 80 443]; #Just in case, will check later if needed
+  networking.firewall.allowedUDPPorts = [34197]; #Just in case, will check later if needed
+  networking.firewall.allowedTCPPorts = [80 443];
 }
