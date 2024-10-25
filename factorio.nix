@@ -20,7 +20,6 @@ in {
       openFirewall = true; #shorthand for networking.firewall.allowedUDPPorts
       description = "Tinybrain gaming?";
       game-name = "TinyFactory";
-      visibility = "public";
       port = 60001;
     };
     searx = {
