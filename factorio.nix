@@ -17,16 +17,19 @@ in {
     openssh.enable = true;
     factorio = {
       enable = true;
-      openFirewall = true;
+      openFirewall = true; #shorthand for networking.firewall.allowedUDPPorts
       description = "Tinybrain gaming?";
       game-name = "TinyFactory";
+      visibility = "public";
     };
     searx = {
       enable = true;
       settings = {
-        server.port = 8080;
-        server.bind_address = "127.0.0.1";
-        server.secret_key = "secret";
+        server = {
+          port = 8080;
+          bind_address = "127.0.0.1";
+          secret_key = "secret";
+        };
       };
     };
     nginx = {
@@ -51,6 +54,5 @@ in {
     htop
     bottom
   ];
-  networking.firewall.allowedUDPPorts = [34197]; #Just in case, will check later if needed
   networking.firewall.allowedTCPPorts = [80 443];
 }
