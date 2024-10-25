@@ -21,6 +21,7 @@ in {
       description = "Tinybrain gaming?";
       game-name = "TinyFactory";
       visibility = "public";
+      port = 60001;
     };
     searx = {
       enable = true;
