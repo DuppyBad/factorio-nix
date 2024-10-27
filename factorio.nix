@@ -12,7 +12,6 @@
   host = "factorio-server.main.factorio-nix.DuppyBad.garnix.me"; # For self-references in web hosting
 in {
   garnix.server.enable = true;
-  garnix.server.persistence.name = "factorio";
   nixpkgs.config.allowUnfree = true;
   services = {
     openssh.enable = true;
@@ -21,7 +20,6 @@ in {
       openFirewall = true; #shorthand for networking.firewall.allowedUDPPorts
       description = "Tinybrain gaming?";
       game-name = "TinyFactory";
-      admins = ["ExKyrios"];
     };
   };
 
