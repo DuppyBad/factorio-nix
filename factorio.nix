@@ -22,7 +22,6 @@ in {
       description = "Tinybrain gaming?";
       game-name = "TinyFactory";
       admins = ["ExKyrios"];
-      saveName = "ubuntu_origin";
     };
   };
 
@@ -40,5 +39,4 @@ in {
     htop
     bottom
   ];
-  networking.firewall.allowedTCPPorts = [80 443];
 }
