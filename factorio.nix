@@ -24,13 +24,7 @@ in {
       admins = ["ExKyrios"];
       saveName = "ubuntu_origin";
     };
-         };
-    nginx = {
-      enable = true;
-      virtualHosts."${host}" = {
-        locations."/".proxyPass = "http://localhost:8080";
-      };
-    };
+  };
 
   users.users.me = {
     isNormalUser = true;
