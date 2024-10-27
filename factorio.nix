@@ -12,6 +12,7 @@
   host = "factorio-server.main.factorio-nix.DuppyBad.garnix.me"; # For self-references in web hosting
 in {
   garnix.server.enable = true;
+  garnix.server.persistence.name = "factorio";
   nixpkgs.config.allowUnfree = true;
   services = {
     openssh.enable = true;
@@ -20,25 +21,16 @@ in {
       openFirewall = true; #shorthand for networking.firewall.allowedUDPPorts
       description = "Tinybrain gaming?";
       game-name = "TinyFactory";
-      port = 60001;
+      admins = ["ExKyrios"];
+      saveName = "ubuntu_origin";
     };
-    searx = {
-      enable = true;
-      settings = {
-        server = {
-          port = 8080;
-          bind_address = "127.0.0.1";
-          secret_key = "secret";
-        };
-      };
-    };
+         };
     nginx = {
       enable = true;
       virtualHosts."${host}" = {
         locations."/".proxyPass = "http://localhost:8080";
       };
     };
-  };
 
   users.users.me = {
     isNormalUser = true;
