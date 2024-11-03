@@ -2,8 +2,6 @@
   pkgs,
   config,
   inputs,
-  pkgs-unstable,
-  pkgs-unstable-legacy,
   ...
 }: let
   sshKeys = [
@@ -32,9 +30,9 @@ in {
 
   security.sudo.wheelNeedsPassword = false;
 
-  environment.systemPackages = [
-    pkgs-unstable-legacy.factorio-headless
-    pkgs.htop
-    pkgs.bottom
+  environment.systemPackages = with pkgs; [
+    factorio-headless
+    htop
+    bottom
   ];
 }
