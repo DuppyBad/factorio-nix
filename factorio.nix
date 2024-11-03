@@ -2,8 +2,8 @@
   pkgs,
   config,
   inputs,
-  nixpkgs-unstable,
   pkgs-unstable,
+  pkgs-unstable-legacy,
   ...
 }: let
   sshKeys = [
@@ -12,7 +12,6 @@
   ];
 in {
   garnix.server.enable = true;
-  nixpkgs-unstable.config.allowUnfree = true;
   nixpkgs.config.allowUnfree = true;
   services = {
     openssh.enable = true;
@@ -34,7 +33,7 @@ in {
   security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = [
-    pkgs-unstable.factorio-headless
+    pkgs-unstable-legacy.factorio-headless
     pkgs.htop
     pkgs.bottom
   ];

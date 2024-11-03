@@ -17,7 +17,12 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    pkgs-unstable = import nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    pkgs-unstable-legacy = pkgs-unstable.legacyPackages.${system};
+
   in {
     nixosConfigurations = {
       factorio-server = lib.nixosSystem {
@@ -29,7 +34,7 @@
         ];
         specialArgs = {
           inherit pkgs-unstable;
-          inherit nixpkgs-unstable;
+          inherit pkgs-unstable-legacy;
         };
       };
     };
