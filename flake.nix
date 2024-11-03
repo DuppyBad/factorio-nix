@@ -3,12 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # Use the unstable channel for the latest packages
+    new.url = "github:NixOS/nixpkgs/master"; # master namespace for factorio only
     garnix-lib.url = "github:garnix-io/garnix-lib";
   };
 
   outputs = {
     self,
     nixpkgs,
+    new,
     garnix-lib,
     ...
   } @ inputs: {

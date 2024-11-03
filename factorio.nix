@@ -2,6 +2,7 @@
   pkgs,
   config,
   inputs,
+  new,
   ...
 }: let
   sshKeys = [
@@ -9,7 +10,6 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEjuzWXJAxCMhRiEvNneHD4iR8hQVR2S0pGK40ogWoWH kyrios@mekhanes"
   ];
 
-  host = "factorio-server.main.factorio-nix.DuppyBad.garnix.me"; # For self-references in web hosting
 in {
   garnix.server.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -33,7 +33,7 @@ in {
   security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = with pkgs; [
-    factorio-headless
+    new.factorio-headless
     htop
     bottom
   ];
