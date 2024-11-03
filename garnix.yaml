@@ -2,4 +2,4 @@ servers:
   - configuration: factorio-server
     deployment:
       type: on-branch
-      branch: master_test
+      branch: main
