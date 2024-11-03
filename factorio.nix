@@ -2,14 +2,13 @@
   pkgs,
   config,
   inputs,
-  new,
+  pkgs-unstable,
   ...
 }: let
   sshKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBU9ecVSTJ6nbhXtJS6A/yutUhOAom+OSVU8SBzayHFf kyrios@machina"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEjuzWXJAxCMhRiEvNneHD4iR8hQVR2S0pGK40ogWoWH kyrios@mekhanes"
   ];
-
 in {
   garnix.server.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -32,9 +31,9 @@ in {
 
   security.sudo.wheelNeedsPassword = false;
 
-  environment.systemPackages = with pkgs; [
-    new.factorio-headless
-    htop
-    bottom
+  environment.systemPackages = [
+    pkgs-unstable.factorio-headless
+    pkgs.htop
+    pkgs.bottom
   ];
 }

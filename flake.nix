@@ -1,27 +1,35 @@
 {
-  description = "Factorio Headless Server Nix Flake";
+  description = "Dual Package Factorio";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # Use the unstable channel for the latest packages
-    new.url = "github:NixOS/nixpkgs/master"; # master namespace for factorio only
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "nixpkgs/master";
     garnix-lib.url = "github:garnix-io/garnix-lib";
   };
 
   outputs = {
     self,
     nixpkgs,
-    new,
     garnix-lib,
+    nixpkgs-unstable,
     ...
-  } @ inputs: {
+  }: let
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+  in {
     nixosConfigurations = {
-      factorio-server = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux"; # Specify your system architecture
+      factorio-server = lib.nixosSystem {
+        inherit system;
         modules = [
-          inputs.garnix-lib.nixosModules.garnix
-          ./factorio.nix
           ./config.nix
+          ./factorio.nix
+          garnix-lib.nixosModules.garnix
         ];
+        specialArgs = {
+          inherit pkgs-unstable;
+        };
       };
     };
   };
