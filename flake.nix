@@ -2,8 +2,8 @@
   description = "Dual Package Factorio";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
     garnix-lib.url = "github:garnix-io/garnix-lib";
   };
 
