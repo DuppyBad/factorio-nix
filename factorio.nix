@@ -11,6 +11,7 @@
   ];
 in {
   garnix.server.enable = true;
+  nixpkgs-unstable.config.allowUnfree = true;
   nixpkgs.config.allowUnfree = true;
   services = {
     openssh.enable = true;
