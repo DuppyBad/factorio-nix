@@ -9,7 +9,15 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEjuzWXJAxCMhRiEvNneHD4iR8hQVR2S0pGK40ogWoWH kyrios@mekhanes"
   ];
 in {
-  garnix.server.enable = true;
+  garnix = {
+    server = {
+      enable = true;
+      persistence = {
+        enable = true;
+        name = "factorio";
+      };
+    };
+  };
   nixpkgs.config.allowUnfree = true;
   services = {
     openssh.enable = true;
@@ -18,6 +26,10 @@ in {
       openFirewall = true; #shorthand for networking.firewall.allowedUDPPorts
       description = "Tinybrain gaming?";
       game-name = "TinyFactory";
+      admins = ["ExKyrios"];
+      loadLatestSave = true;
+      requireUserVerification = true;
+      nonBlockingSaving = true;
     };
   };
 
