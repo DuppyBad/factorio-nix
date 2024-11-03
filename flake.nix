@@ -29,6 +29,7 @@
         ];
         specialArgs = {
           inherit pkgs-unstable;
+          inherit nixpkgs-unstable;
         };
       };
     };
