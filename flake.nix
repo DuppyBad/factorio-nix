@@ -2,7 +2,7 @@
   description = "Factorio HYPERUNSTABLE";
 
   inputs = {
-    nixpkgs.url = "github:Infinidoge/nixpkgs/bump/factorio"; # Use the unstable channel for the latest packages
+    nixpkgs.url = "github:graysonhead/nixpkgs"; # Use the unstable channel for the latest packages
     garnix-lib.url = "github:garnix-io/garnix-lib";
   };
 
