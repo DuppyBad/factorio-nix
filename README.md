@@ -6,4 +6,5 @@ Fully Operational
 
 TODO:
 
-- mod integration
+- Not have to host the mods myself
+- mod integration (partially)
