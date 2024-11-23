@@ -2,7 +2,7 @@
   description = "Factorio HYPERUNSTABLE";
 
   inputs = {
-    nixpkgs.url = "github:graysonhead/nixpkgs"; # Use the unstable channel for the latest packages
+    nixpkgs.url = "github:NixOS/nixpkgs"; # pin to master who cares all I need is factorio
     garnix-lib.url = "github:garnix-io/garnix-lib";
   };
 
@@ -17,8 +17,8 @@
         system = "x86_64-linux"; # Specify your system architecture
         modules = [
           inputs.garnix-lib.nixosModules.garnix
-          ./factorio.nix
           ./config.nix
+          (import ./services)
         ];
       };
     };
