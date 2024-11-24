@@ -13,7 +13,8 @@
     loadLatestSave = true;
     requireUserVerification = true;
     nonBlockingSaving = true;
-    mods = let
+    /*
+       mods = let
       # I wish I had |> but no pipe operator here
       inherit (pkgs) lib;
       modDir = ../mods;
@@ -31,5 +32,6 @@
         // {deps = [];};
     in
       builtins.map modToDrv modList;
+    */
   };
 }

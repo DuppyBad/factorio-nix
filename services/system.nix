@@ -38,5 +38,6 @@ in {
     factorio-headless
     htop
     bottom
+    neovim
   ];
 }
