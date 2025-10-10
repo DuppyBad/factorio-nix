@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1744728829,
-        "narHash": "sha256-AgeSAV7IsDIVKZF4Gbf8A88cLamyd0hhEQ6Q25FA1d8=",
+        "lastModified": 1758561011,
+        "narHash": "sha256-yYXd4qOH22Oe5PaaoGms0imXYweQeEeme+VUoMm4zwY=",
         "owner": "garnix-io",
         "repo": "garnix-lib",
-        "rev": "d3f3a98a0baddb3bdc6e0d028d1b58251a1d86f5",
+        "rev": "fbd9865a68c8f7f4bd9d4e136f27be04098fe1ee",
         "type": "github"
       },
       "original": {
@@ -36,16 +36,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1733264050,
-        "narHash": "sha256-33GN73hbpNa1ShM6JN105U6MW0zn40bdq1+XLXC7OwA=",
-        "owner": "Duppybad",
+        "lastModified": 1759831965,
+        "narHash": "sha256-vgPm2xjOmKdZ0xKA6yLXPJpjOtQPHfaZDRtH+47XEBo=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a60d0c2141a841e67af6f69d6d39ca587cefb1d0",
+        "rev": "c9b6fb798541223bbb396d287d16f43520250518",
         "type": "github"
       },
       "original": {
-        "owner": "Duppybad",
-        "ref": "factorio",
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }

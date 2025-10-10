@@ -2,7 +2,7 @@
   description = "Factorio HYPERUNSTABLE";
 
   inputs = {
-    nixpkgs.url = "github:Duppybad/nixpkgs/factorio"; #personal factorio upkeep
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; #personal factorio upkeep
     garnix-lib.url = "github:garnix-io/garnix-lib";
   };
 
